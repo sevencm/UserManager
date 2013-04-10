@@ -1,11 +1,14 @@
 package com.sevencm.struct;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.sevencm.mathod.UserManMathod;
 import com.sevencm.user.UserInfo;
 
 public class UserColl4Table {
@@ -28,10 +31,14 @@ public class UserColl4Table {
 
 					Scanner scan = new Scanner(System.in);
 				//	System.out.println(scan.next());
-					int intSelect = Integer.parseInt(scan.next(),10);
+					int intSelect = scan.nextInt();
 					switch (intSelect) {
 					case 1:
-						System.out.println("用户");
+						System.out.println("用户ID \t NAME\t AGE\t ADDRESS\t MAIL \tSEX\t PASSWORD ");
+						BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+						String str = buffer.readLine();
+						UserManMathod manMathod = new UserManMathod();					
+						userList.add(manMathod.addUserInfo(str));						
 						break;
 					case 2:
 						System.out.println("修改");
@@ -41,6 +48,8 @@ public class UserColl4Table {
 						break;
 					case 4:
 						System.out.println("查询正常");
+						 new UserManMathod().getUserInfo(userList);
+						
 						break;
 					case 5:
 						System.out.println("查询已删");

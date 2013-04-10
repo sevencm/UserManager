@@ -57,12 +57,5 @@ public class UserInfo {
 		this.intUserAge = intUserAge;
 	}
 	
-	public UserInfo setUserInfo(String[] str){
-		UserInfo userInfo = new UserInfo();
-		userInfo.setIntUserAge(Integer.getInteger(str[0]));
-		userInfo.setStrUserAddress(str[1]);		
-		return userInfo;
 		
-	}
-	
 }
