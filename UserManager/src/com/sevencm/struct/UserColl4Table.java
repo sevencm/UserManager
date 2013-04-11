@@ -34,7 +34,9 @@ public class UserColl4Table {
 					int intSelect = scan.nextInt();
 					switch (intSelect) {
 					case 1:
-						System.out.println("用户ID \t NAME\t AGE\t ADDRESS\t MAIL \tSEX\t PASSWORD ");
+						System.out.println("========================按以下排列顺序输入相应的信息，用TAB键隔开========================");
+
+						System.out.println("用户ID\tNAME\tAGE\t ADDRESS\t MAIL\tSEX\tPASSWORD ");
 						BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 						String str = buffer.readLine();
 						UserManMathod manMathod = new UserManMathod();					
@@ -47,7 +49,7 @@ public class UserColl4Table {
 						System.out.println("删除");
 						break;
 					case 4:
-						System.out.println("查询正常");
+						System.out.println("==============================正常人员列表如下==============================");
 						 new UserManMathod().getUserInfo(userList);
 						
 						break;
