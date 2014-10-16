@@ -21,7 +21,7 @@ public class UserManMathod {
 	
 	public void getUserInfo(List<UserInfo> userList){
 		Iterator<UserInfo> iUserInfo = userList.iterator();
-		System.out.println("用户ID\t用户名\t用户年龄\t用户地址\t用户性别\t用户邮件\t用户密码"	);
+		System.out.println("鐢ㄦ埛ID\t鐢ㄦ埛鍚峔t鐢ㄦ埛骞撮緞\t鐢ㄦ埛鍦板潃\t鐢ㄦ埛鎬у埆\t鐢ㄦ埛閭欢\t鐢ㄦ埛瀵嗙爜"	);
 		while(iUserInfo.hasNext()){
 			UserInfo uI = iUserInfo.next();
 			

@@ -1,8 +1,6 @@
 package com.sevencm.struct;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,86 +10,65 @@ import com.sevencm.mathod.UserManMathod;
 import com.sevencm.user.UserInfo;
 
 public class UserColl4Table {
-	// List<UserInfo> userList = new ArrayList<UserInfo>();
-
+	
 	public static void main(String[] args) {
-		InputStream isInput = System.in;
+		Scanner scan = null;
 		try {
-			byte[] bInputByte = new byte[1024];
 			List<UserInfo> userList = new ArrayList<UserInfo>();
-			boolean booleanFlag = true;
+			boolean booleanFlag = true;			
 			while (booleanFlag) {
-				System.out.println("ÇëÑ¡Ôñ¹¦ÄÜ:");
-				System.out.println("1¡¢Â¼ÈëÓÃ»§ĞÅÏ¢");
-				System.out.println("2¡¢ĞŞ¸ÄÓÃ»§ĞÅÏ¢");
-				System.out.println("3¡¢É¾³ıÓÃ»§ĞÅÏ¢");
-				System.out.println("4¡¢²éÑ¯Õı³£ÓÃ»§ĞÅÏ¢");
-				System.out.println("5¡¢²éÑ¯ÒÑÉ¾ÓÃ»§ĞÅÏ¢");
-				System.out.println("6¡¢ÍË³öÏµÍ³");
+				System.out.println("è¯·é€‰æ‹©åŠŸèƒ½:");
+				System.out.println("1ã€å½•å…¥ç”¨æˆ·ä¿¡æ¯");
+				System.out.println("2ã€ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯");
+				System.out.println("3ã€åˆ é™¤ç”¨æˆ·ä¿¡æ¯");
+				System.out.println("4ã€æŸ¥è¯¢æ­£å¸¸ç”¨æˆ·ä¿¡æ¯");
+				System.out.println("5ã€æŸ¥è¯¢å·²åˆ ç”¨æˆ·ä¿¡æ¯");
+				System.out.println("6ã€é€€å‡ºç³»ç»Ÿ");
 
-					Scanner scan = new Scanner(System.in);
-				//	System.out.println(scan.next());
+					scan = new Scanner(System.in);
 					int intSelect = scan.nextInt();
 					switch (intSelect) {
 					case 1:
-						System.out.println("========================°´ÒÔÏÂÅÅÁĞË³ĞòÊäÈëÏàÓ¦µÄĞÅÏ¢£¬ÓÃTAB¼ü¸ô¿ª========================");
+						System.out.println("========================æŒ‰ä»¥ä¸‹æ’åˆ—é¡ºåºè¾“å…¥ç›¸åº”çš„ä¿¡æ¯ï¼Œç”¨TABé”®éš”å¼€========================");
 
-						System.out.println("ÓÃ»§ID\tNAME\tAGE\t ADDRESS\t MAIL\tSEX\tPASSWORD ");
+						System.out.println("ç”¨æˆ·ID\tNAME\tAGE\t ADDRESS\t MAIL\tSEX\tPASSWORD ");
 						BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 						String str = buffer.readLine();
 						UserManMathod manMathod = new UserManMathod();					
 						userList.add(manMathod.addUserInfo(str));						
 						break;
 					case 2:
-						System.out.println("ĞŞ¸Ä");
+						System.out.println("ä¿®æ”¹");
 						break;
 					case 3:
-						System.out.println("É¾³ı");
+						System.out.println("åˆ é™¤");
 						break;
 					case 4:
-						System.out.println("==============================Õı³£ÈËÔ±ÁĞ±íÈçÏÂ==============================");
+						System.out.println("==============================æ­£å¸¸äººå‘˜åˆ—è¡¨å¦‚ä¸‹==============================");
 						 new UserManMathod().getUserInfo(userList);
 						
 						break;
 					case 5:
-						System.out.println("²éÑ¯ÒÑÉ¾");
+						System.out.println("æŸ¥è¯¢å·²åˆ ");
 						break;
 					case 6:
-						System.out.println("ÍË³öÏµÍ³");
+						System.out.println("é€€å‡ºç³»ç»Ÿ");
 						booleanFlag = false;
 						break;
 					default:
-						System.out.println("ÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë");
+						System.out.println("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥");
 						break;
 
 					}
 
 				}
-
 			
-			// while(isInput.read(bInputByte) != -1){
-			// String InputStr = new String(bInputByte).trim();
-			// switch(){
-			//
-			// }
-			//
-			// if (InputStr.equals("q!"))
-			// break;
-			// System.out.println(InputStr);
-			// String[] strI = InputStr.split(" ");
-			// for(int i=0;i<strI.length; i++){
-			// System.out.println(strI[i]);
-			// // ´æÈëĞÅÏ¢
-			// }
-			// UserInfo userInfo = new UserInfo();
-			// userInfo.setIntUserAge(Integer.getInteger(strI[0]));
-			//
-			// bInputByte = new byte[1024];
-			// }
-			//
-			// isInput.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			if(scan!=null){
+				scan.close();
+			}
 		}
 	}
 }

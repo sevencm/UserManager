@@ -1,6 +1,6 @@
 package com.sevencm.user;
 /**
- * 用户基础资料类
+ * 
  */
 public class UserInfo {
 	/**
